@@ -38,23 +38,32 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
 
 ## Pasos para el Despliegue
 
-< Antes que nada debes pegar en la raíz del proyecto el archivo `google-application-credentials.json` >
+### 1. Pegar credenciales para google aplicattions
+< Antes que nada debés pegar en la raíz del proyecto el archivo `google-application-credentials.json` >
 
-### 1. Construcción de la Imagen Docker
+### 2. Insertar valores en las variables
+1. En el archivo dockerfile que está en la raíz del proyecto completar los valores de las variables:
+   - `PROJECT_ID`: ID del proyecto de google cloud
+   - `DATASET`: nombre del dataset o conjunto de datos de bigquery
+   - `TABLE`: nombre de la tabla del dataset
+
+2. En el archivo deploy.sh que se encuentra dentro de la carpeta deployment, completar:
+   - `PROJECT_ID`: ID del proyecto de google cloud
+   - `REGION`: región en la que quiere ejecutarse el servicio Cloud Run
+
+### 3. Construcción de la Imagen Docker
 
 El `Dockerfile` instala todas las dependencias necesarias para la aplicación, incluido ChromeDriver y Google Chrome para la ejecución del scraper. Sigue estos pasos:
 
-1. Ve al directorio raíz del proyecto.
-2. Construye la imagen Docker:
-   ```bash docker build -t yogonet-flask-app .```
+1. Dirigirse al directorio raíz del proyecto.
+2. Construí la imagen Docker:
+   ```docker build -t yogonet-scrapper-app .```
 
-### 2. Ejecución del Script de Despliegue
+### 4. Ejecución del Script de Despliegue
 
 El script `deploy.sh` configura el proyecto, habilita las APIs necesarias y despliega la aplicación en Cloud Run.
 
-1. Da permisos de ejecución al script:
-   ```bash chmod +x deploy.sh```
-2. Ejecuta el script:
+1. Ejecutar el script:
    ```bash ./deployment/deploy.sh```
 
 ### 3. Configuración de Google Cloud Run
@@ -124,7 +133,7 @@ Si deseas probar la aplicación localmente:
 
 1. Construye y ejecuta el contenedor:
    ```bash
-   docker run -p 8080:8080 yogonet-flask-app
+   docker run -p 8080:8080 yogonet-scrapper-app
    ```
 2. Accede a la aplicación en: [http://localhost:8080](http://localhost:8080)
 
