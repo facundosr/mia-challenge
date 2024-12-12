@@ -1,10 +1,10 @@
 #!/bin/bash
-IMAGE_NAME="yogonet-flask-app"
-PROJECT_ID="mia-challenge"
-REGION="us-central1"
+PROJECT_ID=""
+REGION=""
 SERVICE_NAME="scraper-service"
+
 PORT=8080
-IMAGE_NAME="yogonet-flask-app"
+IMAGE_NAME="yogonet-scrapper-app"
 
 gcloud auth login
 gcloud config set project $PROJECT_ID
