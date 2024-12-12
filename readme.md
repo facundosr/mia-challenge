@@ -17,7 +17,7 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
 ---
 
 ## 📦 **Estructura del Proyecto**
-```
+
 📁 Proyecto/
 ├── 📄 Dockerfile
 └── 📁 deployment/
@@ -25,7 +25,7 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
     └── 📄 requirements.txt
 └── 📁 scraper/
     └── 📄 yogonet.py
-```
+
 ---
 
 ## 🛠️ **Configuración Inicial**
@@ -37,7 +37,6 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
 
 ## Pasos para el Despliegue
 Antes de comenzar debes asegurarte de tener en la raiz del proyecto el archivo .json llamado `google-application-credentials.json`.
-
 
 ### 1. Construcción de la Imagen Docker
 
