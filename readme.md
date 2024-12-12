@@ -2,9 +2,42 @@
 
 ¡Bienvenido! Este archivo explica cómo desplegar el proyecto **Scraper** utilizando 🐳 Docker y ☁️ **Google Cloud Run** de forma eficiente. 
 
----
+## 📝 **Descripción del Proyecto**
 
 ## **Desarrollado por: Facundo Sosa Ruveda**
+
+Este proyecto es un **scraper** que utiliza **Google Cloud Run** para realizar tareas de:  
+1. 🌐 **Scraping web** de noticias con `Python` y `Selenium`.  
+2. ⚙️ **Procesamiento de datos** con `pandas`.  
+3. 📊 **Almacenamiento** en una tabla de **BigQuery**.
+4. 📊 **Ejecución** deploy de la imagen y ejecución del job **Cloud Run**. 
+
+### 🌍 **Sitio web objetivo**  
+El scraper extrae las noticias de la portada del siguiente portal:  
+[🔗 Yogonet International](https://www.yogonet.com/international/)  
+
+### 📦 **Datos extraídos**  
+Del sitio web se obtienen los siguientes datos:  
+- 📰 **Title**: Título de la noticia.  
+- 📢 **Kicker**: Subtítulo o categoría.  
+- 🖼 **Image**: URL de la imagen asociada.  
+- 🔗 **Link**: Enlace directo a la noticia.  
+
+---
+
+### 🔄 **Post-procesamiento de Datos**  
+Con la ayuda de `pandas`, se calculan las siguientes métricas adicionales:  
+- ✍️ **Recuento de palabras en el título**: Total de palabras en cada título.  
+- 🔤 **Recuento de caracteres en el título**: Total de caracteres excluyendo espacios.  
+- 🔠 **Palabras capitalizadas**: Lista de palabras que comienzan con mayúscula en el título.  
+
+---
+
+### 📂 **Almacenamiento: Integración con BigQuery**  
+Una vez procesados, los datos se insertan en una tabla de **BigQuery** para un análisis más avanzado o almacenamiento a largo plazo.  
+
+
+---
 
 ## 🚀 **Requisitos previos**
 Antes de comenzar, asegúrate de tener todo lo siguiente configurado:  
