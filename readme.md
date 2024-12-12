@@ -3,6 +3,7 @@
 ¡Bienvenido! Este archivo explica cómo desplegar el proyecto **Scraper** utilizando 🐳 Docker y ☁️ **Google Cloud Run** de forma eficiente. 
 
 ---
+## **Desarrollado por: Facundo Sosa Ruveda**
 
 ## 🚀 **Requisitos previos**
 Antes de comenzar, asegúrate de tener todo lo siguiente configurado:  
@@ -83,7 +84,7 @@ El script realiza las siguientes acciones:
 5. **Ejecución del script**
    - Copiar y pegar la url en el explorador. Esto ejecutará el servicio en cloud run. Si todo es exitoso se puede ver un diccionario similar a este:
 
-   ´´´ {
+    ```{
     "data_sample": [
         {
             "CapitalizedWords": [
