@@ -1,20 +1,9 @@
 #!/bin/bash
-
-# Cargar variables desde el archivo .env
-if [ -f .env ]; then
-  export $(cat .env | xargs)
-else
-  echo ".env file not found!"
-  exit 1
-fi
-
-# Usar las variables
-echo "Usando las siguientes configuraciones:"
-echo "IMAGE_NAME=$IMAGE_NAME"
-echo "PROJECT_ID=$PROJECT_ID"
-echo "REGION=$REGION"
-echo "SERVICE_NAME=$SERVICE_NAME"
-
+IMAGE_NAME="yogonet-flask-app"
+PROJECT_ID="mia-challenge"
+REGION="us-central1"
+SERVICE_NAME="scraper-service"
+PORT=8080
 IMAGE_NAME="yogonet-flask-app"
 
 gcloud auth login
