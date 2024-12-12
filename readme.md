@@ -18,6 +18,7 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
 ---
 
 ## 📦 **Estructura del Proyecto**
+```
 📁 Proyecto/
 ├── 📄 Dockerfile
 └── 📁 deployment/
@@ -25,7 +26,7 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
     └── 📄 requirements.txt
 └── 📁 scraper/
     └── 📄 yogonet.py
-
+```
 ---
 
 ## 🛠️ **Configuración Inicial**
