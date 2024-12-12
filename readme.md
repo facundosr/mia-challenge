@@ -3,21 +3,21 @@
 ¡Bienvenido! Este archivo explica cómo desplegar el proyecto **Scraper** utilizando 🐳 Docker y ☁️ **Google Cloud Run** de forma eficiente. 
 
 ---
+
 ## **Desarrollado por: Facundo Sosa Ruveda**
 
 ## 🚀 **Requisitos previos**
 Antes de comenzar, asegúrate de tener todo lo siguiente configurado:  
 
-1. ✅ **Cuenta de Google Cloud** con un proyecto habilitado.  
-2. ✅ **Credenciales** google-application-credentials.json con las credenciales para trabajar con BigQuery.
+1. ✅ **Cuenta de Google Cloud** con un proyecto habilitado.
+2. ✅ **Credenciales** google-application-credentials.json con las credenciales para trabajar con BigQuery.  
 3. ✅ Instaladas las herramientas necesarias:  
    - 🛠️ [Google Cloud SDK](https://cloud.google.com/sdk/docs/install)  
-   - 🛠️ [Docker](https://docs.docker.com/get-docker/) 
+   - 🛠️ [Docker](https://docs.docker.com/get-docker/)  
 
 ---
 
 ## 📦 **Estructura del Proyecto**
-
 📁 Proyecto/
 ├── 📄 Dockerfile
 └── 📁 deployment/
@@ -36,7 +36,6 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
    cd Proyecto/
 
 ## Pasos para el Despliegue
-Antes de comenzar debes asegurarte de tener en la raiz del proyecto el archivo .json llamado `google-application-credentials.json`.
 
 ### 1. Construcción de la Imagen Docker
 
@@ -44,16 +43,16 @@ El `Dockerfile` instala todas las dependencias necesarias para la aplicación, i
 
 1. Ve al directorio raíz del proyecto.
 2. Construye la imagen Docker:
-   ```bash docker build -t yogonet-flask-app .
+   ```bash docker build -t yogonet-flask-app .```
 
 ### 2. Ejecución del Script de Despliegue
 
 El script `deploy.sh` configura el proyecto, habilita las APIs necesarias y despliega la aplicación en Cloud Run.
 
 1. Da permisos de ejecución al script:
-   ```bash chmod +x deploy.sh
+   ```bash chmod +x deploy.sh```
 2. Ejecuta el script:
-   ```bash ./deployment/deploy.sh
+   ```bash ./deployment/deploy.sh```
 
 ### 3. Configuración de Google Cloud Run
 
@@ -114,6 +113,7 @@ El script realiza las siguientes acciones:
 
    - Si necesitas actualizar las dependencias, edita `deployment/requirements.txt` y reconstruye la imagen Docker.
 
+---
 
 ## Ejecución Local
 
@@ -132,6 +132,5 @@ Si deseas probar la aplicación localmente:
 - [Google Cloud Run](https://cloud.google.com/run)
 - [Google Container Registry](https://cloud.google.com/container-registry)
 - [Docker Documentation](https://docs.docker.com/)
-
 
 
