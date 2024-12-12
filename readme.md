@@ -17,7 +17,7 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
 ---
 
 ## 📦 **Estructura del Proyecto**
-📁 Proyecto/
+```📁 Proyecto/
 ├── 📄 Dockerfile
 └── 📁 deployment/
     ├── 📄 deploy.sh
