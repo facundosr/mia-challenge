@@ -1,8 +1,8 @@
 FROM python:3.8-slim
 
-ENV PROJECT_ID="mia-challenge"
-ENV DATASET="yogonet"
-ENV TABLE="scraping_table"
+ENV PROJECT_ID=""
+ENV DATASET=""
+ENV TABLE=""
  
 RUN apt-get update && apt-get install -y \
 wget \
