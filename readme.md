@@ -8,9 +8,10 @@
 Antes de comenzar, asegúrate de tener todo lo siguiente configurado:  
 
 1. ✅ **Cuenta de Google Cloud** con un proyecto habilitado.  
-2. ✅ Instaladas las herramientas necesarias:  
+2. ✅ **Credenciales** google-application-credentials.json con las credenciales para trabajar con BigQuery.
+3. ✅ Instaladas las herramientas necesarias:  
    - 🛠️ [Google Cloud SDK](https://cloud.google.com/sdk/docs/install)  
-   - 🛠️ [Docker](https://docs.docker.com/get-docker/)  
+   - 🛠️ [Docker](https://docs.docker.com/get-docker/) 
 
 ---
 
@@ -33,6 +34,10 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
    cd Proyecto/
 
 ## Pasos para el Despliegue
+Antes de comenzar debes asegurarte de tener en la raiz del proyecto el archivo .json llamado `google-application-credentials.json`.
+[Docu](https://cloud.google.com/bigquery/docs/authentication/end-user-installed?hl=es-419
+) 
+
 
 ### 1. Construcción de la Imagen Docker
 
@@ -40,16 +45,16 @@ El `Dockerfile` instala todas las dependencias necesarias para la aplicación, i
 
 1. Ve al directorio raíz del proyecto.
 2. Construye la imagen Docker:
-   ```bash docker build -t yogonet-flask-app .```
+   ```bash docker build -t yogonet-flask-app .
 
 ### 2. Ejecución del Script de Despliegue
 
 El script `deploy.sh` configura el proyecto, habilita las APIs necesarias y despliega la aplicación en Cloud Run.
 
 1. Da permisos de ejecución al script:
-   ```bash chmod +x deploy.sh```
+   ```bash chmod +x deploy.sh
 2. Ejecuta el script:
-   ```bash ./deployment/deploy.sh```
+   ```bash ./deployment/deploy.sh
 
 ### 3. Configuración de Google Cloud Run
 
@@ -75,6 +80,26 @@ El script realiza las siguientes acciones:
 
    - La URL del servicio será mostrada al final del despliegue.
 
+5. **Ejecución del script**
+   - Copiar y pegar la url en el explorador. Esto ejecutará el servicio en cloud run. Si todo es exitoso se puede ver un diccionario similar a este:
+
+   ´´´ {
+    "data_sample": [
+        {
+            "CapitalizedWords": [
+                "Senate"
+            ],
+            "CharCount": 51,
+            "Img": "https://imagenesyogonet.b-cdn.net/data/imagenes/2024/12/12/70840/1734008878-us-congress-united-states-capitol-washington-dc-capitolio-estados-unidos-usa-03.jpg",
+            "Kicker": "December 17",
+            "Link": "https://www.yogonet.com/international/news/2024/12/12/88336-us-senate-committee-to-hold-sports-betting-hearing-next-week",
+            "Title": "US Senate committee to hold sports betting hearing next week",
+            "WordsCount": 10
+        }],
+         "message": "Scraping completed",
+         "time_elapsed": 14.446839332580566
+      } 
+
 ---
 
 ## Notas Adicionales
@@ -90,14 +115,6 @@ El script realiza las siguientes acciones:
 
    - Si necesitas actualizar las dependencias, edita `deployment/requirements.txt` y reconstruye la imagen Docker.
 
-3. **Depuración:**
-
-   - Si encuentras problemas, revisa los registros de Cloud Run:
-     ```bash
-     gcloud logs read --service=$SERVICE_NAME
-     ```
-
----
 
 ## Ejecución Local
 
