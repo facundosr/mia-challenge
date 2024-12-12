@@ -24,7 +24,7 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
     └── 📄 requirements.txt
 └── 📁 scraper/
     └── 📄 yogonet.py
-
+```
 ---
 
 ## 🛠️ **Configuración Inicial**
