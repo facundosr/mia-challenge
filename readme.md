@@ -66,6 +66,25 @@ El script `deploy.sh` configura el proyecto, habilita las APIs necesarias y desp
 1. Ejecutar el script:
    ```bash ./deployment/deploy.sh```
 
+2. Copiar y pegar la url en el explorador. Esto ejecutará el servicio en cloud run. Si todo es exitoso se puede ver un diccionario similar a este:
+
+    ```{
+    "data_sample": [
+        {
+            "CapitalizedWords": [
+                "Senate"
+            ],
+            "CharCount": 51,
+            "Img": "https://imagenesyogonet.b-cdn.net/data/imagenes/2024/12/12/70840/1734008878-us-congress-united-states-capitol-washington-dc-capitolio-estados-unidos-usa-03.jpg",
+            "Kicker": "December 17",
+            "Link": "https://www.yogonet.com/international/news/2024/12/12/88336-us-senate-committee-to-hold-sports-betting-hearing-next-week",
+            "Title": "US Senate committee to hold sports betting hearing next week",
+            "WordsCount": 10
+        }],
+         "message": "Scraping completed",
+         "time_elapsed": 14.446839332580566
+      } 
+
 ### 3. Configuración de Google Cloud Run
 
 El script realiza las siguientes acciones:
@@ -90,49 +109,15 @@ El script realiza las siguientes acciones:
 
    - La URL del servicio será mostrada al final del despliegue.
 
-5. **Ejecución del script**
-   - Copiar y pegar la url en el explorador. Esto ejecutará el servicio en cloud run. Si todo es exitoso se puede ver un diccionario similar a este:
-
-    ```{
-    "data_sample": [
-        {
-            "CapitalizedWords": [
-                "Senate"
-            ],
-            "CharCount": 51,
-            "Img": "https://imagenesyogonet.b-cdn.net/data/imagenes/2024/12/12/70840/1734008878-us-congress-united-states-capitol-washington-dc-capitolio-estados-unidos-usa-03.jpg",
-            "Kicker": "December 17",
-            "Link": "https://www.yogonet.com/international/news/2024/12/12/88336-us-senate-committee-to-hold-sports-betting-hearing-next-week",
-            "Title": "US Senate committee to hold sports betting hearing next week",
-            "WordsCount": 10
-        }],
-         "message": "Scraping completed",
-         "time_elapsed": 14.446839332580566
-      } 
-
----
-
-## Notas Adicionales
-
-1. **Revisar la URL del servicio:**
-
-   - Puedes verificar la URL directamente con:
-     ```bash
-     gcloud run services describe $SERVICE_NAME --region $REGION --format 'value(status.url)'
-     ```
-
-2. **Actualizar dependencias:**
-
-   - Si necesitas actualizar las dependencias, edita `deployment/requirements.txt` y reconstruye la imagen Docker.
 
 ---
 
 ## Ejecución Local
 
-Si deseas probar la aplicación localmente:
+Para probar la aplicación localmente:
 
 1. Construye y ejecuta el contenedor:
-   ```bash
+   ```
    docker run -p 8080:8080 yogonet-scrapper-app
    ```
 2. Accede a la aplicación en: [http://localhost:8080](http://localhost:8080)
