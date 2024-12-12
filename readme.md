@@ -37,8 +37,6 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
 
 ## Pasos para el Despliegue
 Antes de comenzar debes asegurarte de tener en la raiz del proyecto el archivo .json llamado `google-application-credentials.json`.
-[Docu](https://cloud.google.com/bigquery/docs/authentication/end-user-installed?hl=es-419
-) 
 
 
 ### 1. Construcción de la Imagen Docker
@@ -47,19 +45,16 @@ El `Dockerfile` instala todas las dependencias necesarias para la aplicación, i
 
 1. Ve al directorio raíz del proyecto.
 2. Construye la imagen Docker:
-   ```
-   bash docker build -t yogonet-flask-app .
+   ```bash docker build -t yogonet-flask-app .
 
 ### 2. Ejecución del Script de Despliegue
 
 El script `deploy.sh` configura el proyecto, habilita las APIs necesarias y despliega la aplicación en Cloud Run.
 
 1. Da permisos de ejecución al script:
-   ```
-   bash chmod +x deploy.sh
+   ```bash chmod +x deploy.sh
 2. Ejecuta el script:
-   ```
-   bash ./deployment/deploy.sh
+   ```bash ./deployment/deploy.sh
 
 ### 3. Configuración de Google Cloud Run
 
