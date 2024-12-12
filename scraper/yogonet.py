@@ -126,7 +126,7 @@ def run_app():
     processed_data = scraper.process_data(scraped_data)
     scraper.insert_into_bigquery(processed_data)
     data_dict = processed_data.head().to_dict(orient='records')
-    scraper.insert_into_bigquery(processed_data)
+    scraper.insert_into_bigquery(processed_data, insert=False)
 
     end_time =  time.time()
     time_elapsed = end_time - start_time
