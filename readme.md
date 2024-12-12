@@ -19,7 +19,7 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
 
 ## 📦 **Estructura del Proyecto**
 ```
-📁 Proyecto/
+📁 mia-challenge/
 ├── 📄 Dockerfile
 └── 📁 deployment/
     ├── 📄 deploy.sh
@@ -34,9 +34,11 @@ Antes de comenzar, asegúrate de tener todo lo siguiente configurado:
 1. **Clonar el repositorio** en tu máquina local:  
    ```bash
    git clone https://github.com/facundosr/mia-challenge.git
-   cd Proyecto/
+   cd mia-challenge/
 
 ## Pasos para el Despliegue
+
+< Antes que nada debes pegar en la raíz del proyecto el archivo `google-application-credentials.json` >
 
 ### 1. Construcción de la Imagen Docker
 
